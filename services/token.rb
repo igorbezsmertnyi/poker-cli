@@ -4,6 +4,8 @@ class Token
   end
 
   def get
-    File.open('./auth_token').read
+    if File.exist?('./auth_token')
+      File.open('./auth_token', 'r').read
+    end
   end
 end
